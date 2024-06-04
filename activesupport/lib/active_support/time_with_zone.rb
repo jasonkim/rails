@@ -484,7 +484,7 @@ module ActiveSupport
     # of +ActiveSupport.to_time_preserves_timezone+.
     def to_time
       if preserve_timezone
-        @to_time_with_instance_offset ||= getlocal(utc_offset)
+        @to_time_with_instance_offset ||= getlocal(time_zone)
       else
         @to_time_with_system_offset ||= getlocal
       end
